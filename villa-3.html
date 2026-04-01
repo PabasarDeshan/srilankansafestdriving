@@ -1,0 +1,348 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VILLA - 3: Hikkaduwa | Sri Lankan Safest Driving</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        :root {
+            --accent-orange: #ff9d00;
+        }
+
+        .villa-details-page {
+            background-color: #121212;
+            color: #ffffff;
+            padding-top: 140px;
+            padding-bottom: 80px;
+            min-height: 100vh;
+        }
+
+        .villa-details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .villa-title-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .villa-title-header h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .villa-title-header .divider {
+            width: 60px;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 20px auto 0;
+        }
+
+        /* Content Styles */
+        .villa-description {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .villa-description h2 {
+            font-family: var(--font-heading);
+            color: var(--accent-orange);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('image/beach.webp');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+
+        .cta-section h2 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-book {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--accent-orange);
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-book:hover {
+            transform: scale(1.05);
+            background-color: #fff;
+            box-shadow: 0 10px 20px rgba(255, 157, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .villa-title-header h1 {
+                font-size: 2rem;
+            }
+
+            .villa-description h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Navigation -->
+        <header class="main-header sticky active">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="image/logo (1).png" alt="Sri Lankan Safest Driving Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-primary">SRI LANKAN</span>
+                        <span class="logo-secondary">SAFEST DRIVING</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">HOME</a></li>
+                    <li><a href="index.html#gallery">GALLERY</a></li>
+                    <li><a href="reviews.html">REVIEWS</a></li>
+                    <li class="dropdown">
+                        <a href="itineraries.html">SERVICES ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="itineraries.html">Long Day Tours</a></li>
+                            <li><a href="services-we-do.html">Services We Do</a></li>
+                            <li><a href="rentals.html">Rent Villa, Car & Bike</a></li>
+                            <li><a href="index.html#services">Hotels</a></li>
+                            <li><a href="airport-pickup.html">Airport Pickups</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="best_places.html" id="nav-places">BEST VISITING PLACES ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="best_places.html">Best Places to Visit</a></li>
+                            <li><a href="#">Places – 360' View</a></li>
+                        </ul>
+                    </li>
+                    <li id="nav-villa"><a href="villas.html">RENT VILLA</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#more" id="nav-more">MORE ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="registration.html">Registration</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </li>
+          <li class="lang-switcher">
+            <button class="lang-switcher-btn" aria-label="Switch Language">
+              <span class="lang-globe">&#127760;</span> LANGUAGE &#9660;
+            </button>
+            <div class="lang-dropdown"></div>
+          </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="villa-details-page">
+            <div class="villa-details-container">
+                <div class="villa-title-header">
+                    <h1>VILLA - 3 : Hikkaduwa</h1>
+                    <p style="margin-top: 10px; font-size: 1.2rem; color: #cccccc;">3-Bedroom Coastal Paradise</p>
+                    <div class="divider"></div>
+                </div>
+
+                <!-- Gallery Section -->
+                <section class="gallery-section">
+                    <div class="tour-carousel-wrapper">
+                        <div class="tour-carousel-track-container">
+                            <div class="tour-carousel-track" id="villa-carousel">
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_119_rs=w_1160,h_773.png" alt="Pool View">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_129_rs=w_1160,h_773.png" alt="Bed View">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_134_rs=w_1160,h_773.png"
+                                        alt="Outside Relaxing Area">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_139_rs=w_1160,h_773.png" alt="Garden View">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_159_rs=w_1160,h_773.png" alt="Corridor View">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_167_rs=w_1160,h_773.png" alt="Bed View 2">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_175_rs=w_1160,h_773.png" alt="Villa View 7">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_180_rs=w_1160,h_773.png" alt="Villa View 8">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_185_rs=w_1160,h_773.png" alt="Villa View 9">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_188_rs=w_1023,h_682.png" alt="Villa View 10">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_190_rs=w_1160,h_773.png" alt="Villa View 11">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_205_rs=w_1160,h_773.png" alt="Villa View 12">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_26_rs=w_1280,h_853.png" alt="Villa View 13">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_27_rs=w_1280,h_853.png" alt="Villa View 14">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_30_rs=w_1280,h_853.png" alt="Villa View 15">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_31_rs=w_1280,h_853.png" alt="Villa View 16">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_43_rs=w_1160,h_773.png" alt="Villa View 17">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_56_rs=w_1160,h_773.png" alt="Villa View 18">
+                                </div>
+                                <div class="tour-carousel-item">
+                                    <img src="Villa 3 - Hikkaduwa/imgi_64_rs=w_1023,h_1535.png" alt="Villa View 19">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn prev-btn" id="villa-prev">❮</button>
+                            <button class="carousel-btn next-btn" id="villa-next">❯</button>
+                        </div>
+                        <div class="carousel-dots" id="villa-dots"></div>
+                    </div>
+                </section>
+
+                <!-- Description Section -->
+                <section class="villa-description">
+                    <h2>Discover Coastal Paradise at its Finest</h2>
+                    <p>Nestled along the pristine shores of Hikkaduwa, this exquisite 3-bedroom villa offers a
+                        quintessential beachfront escape. With its perfect blend of modern amenities and tropical charm,
+                        it promises an idyllic retreat for those seeking sun, sea, and serenity.</p>
+
+                    <h3>Bedrooms</h3>
+                    <p>This villa features three inviting bedrooms, each thoughtfully designed to provide the utmost
+                        comfort and relaxation. Whether you're traveling with family or friends, these tranquil spaces
+                        ensure a restful night's sleep.</p>
+
+                    <h3>Bathrooms</h3>
+                    <p>Two well-appointed bathrooms are at your disposal, complete with hot water for a rejuvenating
+                        shower experience. They are maintained to impeccable standards to ensure your comfort throughout
+                        your stay.</p>
+
+                    <h3>Air-Conditioned Room</h3>
+                    <p>Escape the tropical heat in the comfort of an air-conditioned room, where you can unwind and
+                        recharge after a day of beach activities.</p>
+
+                    <h3>Kitchen</h3>
+                    <p>A fully-equipped kitchen awaits the culinary enthusiasts, furnished with modern appliances and
+                        ample counter space. Prepare delicious meals using fresh local ingredients or simply enjoy your
+                        morning coffee as you plan your day's adventures.</p>
+
+                    <h3>Hot Water</h3>
+                    <p>After a day of swimming and sunbathing, you can rinse off the salt and sand in the comfort of a
+                        hot shower, ensuring a refreshing experience.</p>
+
+                    <h3>WiFi</h3>
+                    <p>Stay connected to the world with high-speed WiFi available throughout the villa. Share your
+                        Hikkaduwa memories with loved ones or catch up on work if needed.</p>
+
+                    <h3>Washing Machine</h3>
+                    <p>For your convenience, a washing machine is provided, allowing you to freshen up your beachwear
+                        and clothing during your stay.</p>
+
+                    <p style="margin-top: 40px; font-weight: 500;">This Hikkaduwa villa is not just a place to stay;
+                        it's a gateway to beachfront bliss. Step outside onto the golden sands, take a dip in the azure
+                        waters, or simply relax on your private terrace, savoring the gentle sea breeze. The vibrant
+                        culture and stunning natural beauty of Hikkaduwa await your exploration. Book your stay now and
+                        let the coastal paradise envelop you in relaxation and adventure.</p>
+
+                    <div class="cta-section">
+                        <h2>Book Your Dream Villa Getaway Today!</h2>
+                        <a href="https://wa.me/94779036148" class="btn-book" target="_blank">Contact Us on WhatsApp</a>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer id="contact" class="main-footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Sri-Lankan Safest Driving</h3>
+                    <p>No 47, Rathmehera Scheme, Aluthwala, 80332, Hikkaduwa, Sri Lanka</p>
+                    <p>Email: <a href="mailto:safestdriver.info@gmail.com">safestdriver.info@gmail.com</a></p>
+                    <p>WhatsApp: <a href="https://wa.me/94779036148">+94 779036148</a></p>
+                    <p>Mobile No. - +94779036148</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2026 Sri Lankan Safest Driving - All Rights Reserved.</p>
+                <p style="font-size: 0.75rem; margin-top: 10px;">Designed by ND LK SOLUTIONS (PVT) LTD</p>
+            </div>
+        </footer>
+
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/94779036148" class="whatsapp-float" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"
+                style="width: 35px; height: 35px;">
+        </a>
+    </div>
+
+    <script src="./main.js"></script>
+
+  <!-- Google Translate -->
+  <div id="google_translate_element" style="display:none"></div>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

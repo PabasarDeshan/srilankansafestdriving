@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sri Lankan Safest Driving | 13 Nights &amp; 14 Days Tour</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Specific Styles for Explore Page */
+        .explore-hero {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 100vh;
+            background-color: var(--secondary-color);
+        }
+
+        .explore-image {
+            flex: 1 1 50%;
+            min-height: 50vh;
+            position: relative;
+        }
+
+        .explore-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .explore-info {
+            flex: 1 1 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 5%;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        .explore-category {
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .explore-duration {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .explore-route {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 80%;
+            margin-bottom: 50px;
+            color: #e0e0e0;
+        }
+
+        .explore-content-section {
+            padding: 80px 10%;
+            background-color: #ffffff;
+            color: #333;
+            overflow: hidden;
+        }
+
+        .explore-content-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .explore-content-container h4 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        /* Two column timeline layout */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .timeline-grid.single-col {
+            grid-template-columns: 1fr;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timeline-item-image,
+        .carousel-image {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            transition: transform 0.5s ease;
+        }
+
+        .timeline-item-image img,
+        .carousel-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .timeline-item-image:hover img,
+        .carousel-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .timeline-item-content {
+            text-align: center;
+        }
+
+        .timeline-item-content p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .timeline-item-content strong {
+            color: #333;
+            font-weight: 700;
+        }
+
+        /* Full width day divider */
+        .day-divider {
+            text-align: left;
+            margin: 60px 0 40px;
+            padding-bottom: 20px;
+        }
+
+        .day-divider h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: #222;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .day-divider p {
+            text-align: left !important;
+            font-style: italic;
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Image Carousel Setup */
+        .carousel-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 40px auto;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            padding: 0 5px;
+        }
+
+        .carousel-image {
+            height: 500px;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        /* Trip Map Styles */
+        @media (max-width: 768px) {
+            .explore-content-section {
+                padding: 40px 15px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .explore-hero {
+                flex-direction: column;
+            }
+
+            .explore-image,
+            .explore-info {
+                flex: 1 1 100%;
+            }
+
+            .explore-image {
+                min-height: 400px;
+                order: -1;
+            }
+
+            .explore-duration {
+                font-size: 3rem;
+            }
+
+            .explore-content-section {
+                padding: 60px 5%;
+            }
+
+            .timeline-item-image,
+            .carousel-image {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .timeline-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item-image,
+            .carousel-image {
+                height: 350px;
+            }
+        }
+
+        /* Sticky Nav padding */
+        body {
+            padding-top: 80px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .carousel-dot {
+            width: 30px;
+            height: 2px;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background-color: #333;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
+            padding: 0 10px;
+        }
+
+        .carousel-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            pointer-events: all;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body class="tour-page">
+    <div id="app">
+
+        <!-- Navigation -->
+        <header class="main-header sticky active">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="image/logo (1).png" alt="Sri Lankan Safest Driving Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-primary">SRI LANKAN</span>
+                        <span class="logo-secondary">SAFEST DRIVING</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">HOME</a></li>
+                    <li><a href="index.html#gallery">GALLERY</a></li>
+                    <li><a href="reviews.html">REVIEWS</a></li>
+                    <li class="dropdown">
+                        <a href="itineraries.html">SERVICES ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="itineraries.html">Long Day Tours</a></li>
+                            <li><a href="services-we-do.html">Services We Do</a></li>
+                            <li><a href="rentals.html">Rent Villa, Car & Bike</a></li>
+                            <li><a href="index.html#services">Hotels</a></li>
+                            <li><a href="airport-pickup.html">Airport Pickups</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="best_places.html" id="nav-places">BEST VISITING PLACES ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="best_places.html">Best Places to Visit</a></li>
+                            <li><a href="#">Places – 360' View</a></li>
+                        </ul>
+                    </li>
+                    <li id="nav-villa"><a href="villas.html">RENT VILLA</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#more" id="nav-more">MORE ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="registration.html">Registration</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </li>
+          <li class="lang-switcher">
+            <button class="lang-switcher-btn" aria-label="Switch Language">
+              <span class="lang-globe">&#127760;</span> LANGUAGE &#9660;
+            </button>
+            <div class="lang-dropdown"></div>
+          </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="explore-hero">
+                <div class="explore-image">
+                    <img src="image/imgi_29_rs=w_1920,m.webp" alt="Sri Lanka Grand Tour">
+                </div>
+                <div class="explore-info">
+                    <div class="explore-category">GRAND SRI LANKA TOUR</div>
+                    <h1 class="explore-duration">13 Nights / 14 Days</h1>
+                    <p class="explore-route">Airport → Kalpitiya → Trincomalee → Pasikuda → Arugam bay → Yala → Galle →
+                        Hikkaduwa → Colombo → Airport</p>
+                    <a href="#details" class="btn-yellow">EXPLORE</a>
+                </div>
+            </section>
+
+            <!-- Content Section -->
+            <section id="details" class="explore-content-section">
+                <div class="explore-content-container">
+
+                    <!-- Tour Overview -->
+                    <div class="tour-overview" style="margin-bottom: 50px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <h2
+                                style="font-family: var(--font-heading); font-size: 1.5rem; color: #333; margin: 0; text-transform: uppercase;">
+                                13 NIGHTS <span style="font-weight: 400; color: #666;">/ 14 DAYS</span>
+                            </h2>
+                        </div>
+                        <p style="font-size: 1.1rem; color: #666; margin: 0; text-align: left;">
+                            Airport – Kalpitiya – Trincomalee – Pasikuda – Arugam bay – Yala – Galle – Hikkaduwa –
+                            Colombo – Airport
+                        </p>
+                    </div>
+
+                    <!-- Day 01 -->
+                    <div class="day-divider">
+                        <h3>Day 01 &ndash; Airport &ndash; Kalpitiya</h3>
+                        <p>On the first day of your visit to wonderful Sri Lanka, you will transferred to Kalpitiya.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Kalpitiya Beach</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="kalpitiya-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_2_rs=w_600,cg_true,m.webp"
+                                                alt="Kalpitiya Beach View 1">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/Kudawa-Beach.jpg" alt="Kalpitiya Beach View 2">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_18_qt=q_84.png" alt="Kalpitiya Beach View 3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="kalpitiya-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="kalpitiya-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="kalpitiya-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p><strong>Kalpitiya</strong> (Sinhala: කල්පිටිය, romanized: Kalpiṭiya, Tamil:
+                                    கற்பிட்டி, romanized: Kaṟpiṭṭi) is a coastal town located in the western region of,
+                                    Puttalam District. The Kalpitiya peninsula consists of a total of fourteen islands.
+                                    It is developing as a tourist destination.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 02 -->
+                    <div class="day-divider">
+                        <h3>Day 02 &ndash; Kalpitiya</h3>
+                        <p>Enjoy a full day of relaxation or adventure in Kalpitiya.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Dolphin Watching &amp; Islands</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="dolphin-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_16_qt=q_84.png" alt="Dolphin Watching 1">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="dolphin-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="dolphin-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="dolphin-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p>Spend the day exploring the lagoons, visiting the islands, or heading out to sea for
+                                    an unforgettable <strong>dolphin watching</strong> experience. The calm waters and
+                                    scenic landscapes make it a perfect tropical getaway.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 03 -->
+                    <div class="day-divider">
+                        <h3>Day 03 &ndash; Trincomalee</h3>
+                        <p>After breakfast, travel across the island to the beautiful eastern coast of Trincomalee.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Trincomalee Harbor &amp; Coast</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="trinco-coast-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_37_qt=q_84.webp" alt="Trincomalee Coast 1">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/dutch-bay-beach.jpg" alt="Trincomalee Coast 2">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_68_rs=w_100%25.webp" alt="Trincomalee Coast 3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="trinco-coast-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="trinco-coast-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="trinco-coast-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p><strong>Trincomalee (Trinco)</strong> sits on one of the world’s finest natural
+                                    harbors. This historic city is old almost beyond reckoning: it’s possibly the site
+                                    of historic Gokana in the Mahavamsa (Great Chronicle), and its Shiva temple the site
+                                    of Trikuta Hill in the Hindu text Vayu Purana. It makes a great stop over on the way
+                                    to the nearby beaches of Uppuveli and Nilaveli.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 04 -->
+                    <div class="day-divider">
+                        <h3>Day 04 &ndash; Trincomalee</h3>
+                        <p>Discover the wonders of Trincomalee, from its ancient temples to its vibrant marine life.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Koneswaram Temple &amp; Pigeon Island</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="trinco-temple-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_68_rs=w_100%25.webp" alt="Koneswaram Temple">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/Lovers-leap-trincomalee-1024x768.jpg.webp"
+                                                alt="Lovers Leap">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_7_rs=w_814,h_407,cg_true.webp" alt="Nilaveli Beach">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="trinco-temple-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="trinco-temple-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="trinco-temple-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p>Visit the iconic <strong>Koneswaram Temple</strong>, perched on a cliff overlooking
+                                    the ocean. Later, you can opt for a boat trip to <strong>Pigeon Island National
+                                        Park</strong>, a premier spot for snorkeling and viewing coral reefs.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 05 -->
+                    <div class="day-divider">
+                        <h3>Day 05 &ndash; Pasikuda</h3>
+                        <p>Travel to the pristine shores of Pasikuda, known for its shallow, calm waters.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Pasikuda Beach</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="pasikuda-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/passikudah.jpg" alt="Pasikuda Beach View 1">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="pasikuda-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="pasikuda-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="pasikuda-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p>The enchanting <strong>Pasikuda Beach</strong> is one of the best places to visit
+                                    in the paradise island of Sri Lanka. The incredible beauty of this glorious beach
+                                    can take your very breath away. These white sandy shores that fringe lapis lazuli
+                                    splendour of great Indian Ocean provide ample opportunities to rest and relax. There
+                                    are plenty of luxury hotels and resorts, catering to the discerning needs of
+                                    travelers who have started visiting this beach in their numbers. But Pasikuda is
+                                    still very much a sleeping town, compared to the popular beach destinations in the
+                                    southern and western coasts of the island.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 06 -->
+                    <div class="day-divider">
+                        <h3>Day 06 &ndash; Pasikuda</h3>
+                        <p>Enjoy a day of leisure at one of the most beautiful beaches in Sri Lanka.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Marine Life &amp; Relaxation</h4>
+                            <div class="timeline-item-image">
+                                <img src="image/imgi_69_rs=w_1920,m.webp" alt="Pasikuda Marine Life">
+                            </div>
+                            <div class="timeline-item-content">
+                                <p>Whether you want to sunbathe, swim, or explore the marine life,
+                                    <strong>Pasikuda</strong>
+                                    offers a serene environment perfectly suited for relaxation and water activities.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 07 -->
+                    <div class="day-divider">
+                        <h3>Day 07 &ndash; Arugam bay</h3>
+                        <p>Head south to the world-famous surfing destination, Arugam Bay.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Arugam Bay Surf Point</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="arugambay-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_41_qt=q_30.png" alt="Arugam Bay Surf 1">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/arugambe.png" alt="Arugam Bay Surf 2">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/arugam.webp" alt="Arugam Bay Surf 3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="arugambay-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="arugambay-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="arugambay-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p><strong>Arugam Bay</strong> is a historic settlement on the Indian Ocean coast and a
+                                    renowned surf spot. It attracts surfers from all over the world with its consistent
+                                    breaks and laid-back vibe.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 08 -->
+                    <div class="day-divider">
+                        <h3>Day 08 &ndash; Arugam bay</h3>
+                        <p>Experience the unique blend of wildlife and surf culture in Arugam Bay.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Wildlife &amp; Scenery</h4>
+                            <div class="timeline-item-image">
+                                <img src="image/imgi_73_rs=w_1920,m.webp" alt="Arugam Bay Coast">
+                            </div>
+                            <div class="timeline-item-content">
+                                <p>Explore the surrounding lagoons or visit the nearby Kumana National Park.
+                                    <strong>Arugam Bay</strong> is not just for surfers; it's a place of incredible
+                                    physical beauty and biodiversity.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Day 09 -->
+                    <div class="day-divider">
+                        <h3>Day 09 &ndash; Yala Safari</h3>
+                        <p>After breakfast proceed to Yala and visit Yala National Park while enjoying the Yala Safari.
+                        </p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Yala National Park</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="yala-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/Crowds-in-Yala-national-park.jpg" alt="Yala Safari 1">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_14_rs=w_600,cg_true,m.webp" alt="Yala Safari 2">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_6_rs=w_600,cg_true,m.webp" alt="Yala Safari 3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="yala-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="yala-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="yala-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p><strong>Yala (යාල) National Park</strong> is the most visited and second largest
+                                    national park in Sri Lanka, bordering the Indian Ocean. The park consists of five
+                                    blocks, two of which are now open to the public, and also adjoining parks. The
+                                    blocks have individual names such as Ruhuna National Park (Block 1), and Kumana
+                                    National Park or 'Yala East' for the adjoining area. It is situated in the
+                                    southeast region of the country and lies in Southern Province and Uva Province. The
+                                    park covers 979 square kilometers (378 sq mi) and is located about 300 kilometers
+                                    (190 mi) from Colombo.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 10 -->
+                    <div class="day-divider">
+                        <h3>Day 10 &ndash; Galle &ndash; Hikkaduwa</h3>
+                        <p>The next day after breakfast, proceed to Hikkaduwa via Galle.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Galle Fort &amp; Hikkaduwa</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="galle-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_13_qt=q_95.webp" alt="Galle Fort View 1">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/hikkaduvasds.jpg" alt="Galle Fort View 2">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/686b63eabef6a_Sri_Lankan_Beach copy.webp"
+                                                alt="Galle Fort View 3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="galle-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="galle-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="galle-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p><strong>Galle</strong> is a town situated on the southwestern tip of Sri Lanka, 119
+                                    km (74 mi) from Colombo. Galle was known as Gimhathiththa (although Ibn Batuta in
+                                    the 14th century refers to it as Qali) before the arrival of the Portuguese in the
+                                    16th century when it was the main port on the island. Galle reached the height of
+                                    its development in the 18th century, before the arrival of the British, who
+                                    developed the harbor at Colombo.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 11 & 12 -->
+                    <div class="day-divider">
+                        <h3>Day 11 &ndash; 12 &ndash; Hikkaduwa</h3>
+                        <p>Full-day leisure on Hikkaduwa Beach.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Hikkaduwa Beach &amp; Town</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="hikkaduwa-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/686b63eabef6a_Sri_Lankan_Beach.webp"
+                                                alt="Hikkaduwa Beach 1">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/hikkaduvasds.jpg" alt="Hikkaduwa Beach 2">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/LSL_B2_Hikkaduwa-Beach_800x1000.jpg"
+                                                alt="Hikkaduwa Beach 3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="hikkaduwa-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="hikkaduwa-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="hikkaduwa-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p>Hikkaduwa is a seaside resort town in southwestern Sri Lanka. It’s known for its
+                                    strong surf and beaches, including palm-dotted <strong>Hikkaduwa Beach</strong>,
+                                    lined with restaurants and bars. The shallow waters opposite Hikkaduwa Beach shelter
+                                    the <strong>Hikkaduwa National Park</strong>, which is a coral sanctuary and home to
+                                    marine turtles and exotic fish. Inland, <strong>Gangarama Maha Vihara</strong> is a
+                                    Buddhist temple decorated with hand-painted murals.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 13 -->
+                    <div class="day-divider">
+                        <h3>Day 13 &ndash; Colombo</h3>
+                        <p>The next day after breakfast, proceed to Colombo and enjoy a city tour.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Colombo City</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="colombo-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_22_qt=q_30.webp" alt="Colombo City 1">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/LK950H0000-01-E_6184e3ee-35ea-4f21-87ba-e6e8b1ffef25.webp"
+                                                alt="Colombo City 2">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_22_rs=w_1032,h_776,cg_true.png" alt="Colombo City 3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="colombo-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="colombo-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="colombo-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p><strong>Colombo</strong> is the executive and judicial capital and the largest city
+                                    of Sri Lanka by population. According to the Brookings Institution, Colombo
+                                    metropolitan area has a population of 5.6 million, and 752,993 in the Municipality.
+                                    It is the financial center of the island and a tourist destination.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 14 -->
+                    <div class="day-divider">
+                        <h3>Day 14 &ndash; Colombo &ndash; Airport</h3>
+                        <p>Your grand tour concludes as we take you to the airport for your upcoming flight. We hope
+                            you enjoyed your trip!</p>
+                    </div>
+
+                    <div class="trip-map-section">
+                        <div class="trip-map-wrapper"
+                            style="background-color: #f1f1f1; border-radius: 12px; overflow: hidden;">
+                            <img src="image/imgi_14_cr=t_0.82%25,l_0%25,w_94.34%25,h_94%25.webp" alt="Map of the whole trip"
+                                style="width: 100%; display: block; object-fit: contain;">
+                        </div>
+                        <p class="trip-map-caption">Map of the whole trip</p>
+                    </div>
+
+                    <!-- Booking Button -->
+                    <div style="text-align: center; margin-top: 60px;">
+                        <a href="index.html#contact" class="btn-yellow"
+                            style="padding: 15px 40px; font-size: 1.1rem; letter-spacing: 2px;">BOOK THIS TOUR</a>
+                    </div>
+
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer id="contact" class="main-footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Sri-Lankan Safest Driving</h3>
+                    <p>No 47, Rathmehera Scheme, Aluthwala, 80332, Hikkaduwa, Sri Lanka</p>
+                    <p>Email: <a href="mailto:safestdriver.info@gmail.com">safestdriver.info@gmail.com</a></p>
+                    <p>WhatsApp: <a href="https://wa.me/94779036148">+94 779036148</a></p>
+                    <p>Mobile No. - +94779036148</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2026 Sri Lankan Safest Driving - All Rights Reserved.</p>
+                <p style="font-size: 0.75rem; margin-top: 10px;">Designed by ND LK SOLUTIONS (PVT) LTD</p>
+            </div>
+        </footer>
+
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/94779036148" class="whatsapp-float" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"
+                style="width: 35px; height: 35px;">
+        </a>
+    </div>
+
+    <script src="./main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Carousel initializations would go here
+        });
+    </script>
+
+  <!-- Google Translate -->
+  <div id="google_translate_element" style="display:none"></div>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

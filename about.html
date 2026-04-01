@@ -1,0 +1,279 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us | Sri Lankan Safest Driving</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .about-page {
+            background-color: #0d0d0d;
+            color: #ffffff;
+            padding-top: 120px;
+            min-height: 100vh;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 5% 80px;
+        }
+
+        .about-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .about-header h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .about-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            color: #cccccc;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 2fr) minmax(0, 1.5fr);
+            gap: 40px;
+            align-items: flex-start;
+        }
+
+        .about-text-block h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .about-text-block p {
+            color: #dddddd;
+            line-height: 1.8;
+            margin-bottom: 18px;
+            font-size: 1.02rem;
+        }
+
+        .about-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+        }
+
+        .about-list li {
+            position: relative;
+            padding-left: 28px;
+            margin-bottom: 12px;
+            color: #cccccc;
+        }
+
+        .about-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        .about-highlight {
+            background: radial-gradient(circle at top left, rgba(255, 157, 0, 0.25), transparent 60%);
+            border-radius: 16px;
+            padding: 28px 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .about-highlight h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .about-cta {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .about-cta p {
+            color: #cccccc;
+            margin-bottom: 18px;
+        }
+
+        .about-cta a.btn-primary {
+            display: inline-block;
+            padding: 12px 30px;
+            font-size: 0.95rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 1024px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-header h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Navigation -->
+        <header class="main-header sticky active">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="image/logo (1).png" alt="Sri Lankan Safest Driving Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-primary">SRI LANKAN</span>
+                        <span class="logo-secondary">SAFEST DRIVING</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">HOME</a></li>
+                    <li><a href="index.html#gallery">GALLERY</a></li>
+                    <li><a href="reviews.html">REVIEWS</a></li>
+                    <li class="dropdown">
+                        <a href="itineraries.html">SERVICES ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="itineraries.html">Long Day Tours</a></li>
+                            <li><a href="services-we-do.html">Services We Do</a></li>
+                            <li><a href="rentals.html">Rent Villa, Car & Bike</a></li>
+                            <li><a href="index.html#services">Hotels</a></li>
+                            <li><a href="airport-pickup.html">Airport Pickups</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="best_places.html" id="nav-places">BEST VISITING PLACES ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="best_places.html">Best Places to Visit</a></li>
+                            <li><a href="#">Places – 360' View</a></li>
+                        </ul>
+                    </li>
+                    <li id="nav-villa"><a href="villas.html">RENT VILLA</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#more" id="nav-more">MORE ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="registration.html">Registration</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </li>
+          <li class="lang-switcher">
+            <button class="lang-switcher-btn" aria-label="Switch Language">
+              <span class="lang-globe">&#127760;</span> LANGUAGE &#9660;
+            </button>
+            <div class="lang-dropdown"></div>
+          </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="about-page">
+            <div class="about-container">
+                <div class="about-header">
+                    <h1>About Us</h1>
+                    <p>We are Sri Lankan Safest Driving – your trusted travel partner for safe, comfortable and
+                        memorable
+                        journeys across Sri Lanka, from the golden beaches of Hikkaduwa to the misty hills and ancient
+                        cities.</p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-text-block">
+                        <h2>Who We Are</h2>
+                        <p>For years, Sri Lankan Safest Driving has helped travellers explore Sri Lanka with confidence.
+                            We
+                            specialize in private tours, airport transfers, long day trips and tailor‑made holiday
+                            plans,
+                            always with safety and genuine Sri Lankan hospitality at the center.</p>
+                        <p>Based in Hikkaduwa and Colombo, our experienced local team knows the best routes, hidden
+                            gems and
+                            trusted partners around the island, so you can relax and enjoy the journey.</p>
+
+                        <ul class="about-list">
+                            <li>Friendly, professional and well‑experienced drivers</li>
+                            <li>Fully insured and well‑maintained vehicles</li>
+                            <li>Customized itineraries for couples, families and groups</li>
+                            <li>Support from the first enquiry until you return home</li>
+                        </ul>
+                    </div>
+
+                    <div class="about-highlight">
+                        <h3>Our Promise to You</h3>
+                        <p>Every trip with Sri Lankan Safest Driving is designed to be safe, comfortable and honest.
+                            We
+                            take time to understand your plans, give clear pricing with no hidden charges, and provide
+                            guidance like a local friend – not just a driver.</p>
+                        <p>Whether you need a one‑day tour, a full island round trip or long‑stay villa and vehicle
+                            arrangements, we are ready to help you experience Sri Lanka in the best and safest way.</p>
+                    </div>
+                </div>
+
+                <div class="about-cta">
+                    <p>Ready to plan your Sri Lankan adventure with us?</p>
+                    <a href="index.html#contact" class="btn-primary">CONTACT US</a>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer id="contact" class="main-footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Sri-Lankan Safest Driving</h3>
+                    <p>No 47, Rathmehera Scheme, Aluthwala, 80332, Hikkaduwa, Sri Lanka</p>
+                    <p>Email: <a href="mailto:safestdriver.info@gmail.com">safestdriver.info@gmail.com</a></p>
+                    <p>WhatsApp: <a href="https://wa.me/94779036148">+94 779036148</a></p>
+                    <p>Mobile No. - +94779036148</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2026 Sri Lankan Safest Driving - All Rights Reserved.</p>
+                <p style="font-size: 0.75rem; margin-top: 10px;">Designed by ND LK SOLUTIONS (PVT) LTD</p>
+            </div>
+        </footer>
+
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/94779036148" class="whatsapp-float" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"
+                style="width: 35px; height: 35px;">
+        </a>
+    </div>
+    <script src="./main.js"></script>
+
+  <!-- Google Translate -->
+  <div id="google_translate_element" style="display:none"></div>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

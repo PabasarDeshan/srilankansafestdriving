@@ -1,0 +1,363 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VILLA - 4: Galle | Sri Lankan Safest Driving</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        :root {
+            --accent-orange: #ff9d00;
+        }
+
+        .villa-details-page {
+            background-color: #121212;
+            color: #ffffff;
+            padding-top: 140px;
+            padding-bottom: 80px;
+            min-height: 100vh;
+        }
+
+        .villa-details-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .villa-title-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .villa-title-header h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--accent-orange);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0;
+        }
+
+        .villa-title-header .divider {
+            width: 60px;
+            height: 2px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 20px auto 0;
+        }
+
+        /* Content Styles */
+        .villa-description {
+            max-width: 900px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .villa-description h2 {
+            font-family: var(--font-heading);
+            color: var(--accent-orange);
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-section {
+            text-align: center;
+            margin-top: 80px;
+            padding: 60px;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('image/beach.webp');
+            background-size: cover;
+            background-position: center;
+            border-radius: 12px;
+        }
+
+        .cta-section h2 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn-book {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: var(--accent-orange);
+            color: #000;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-book:hover {
+            transform: scale(1.05);
+            background-color: #fff;
+            box-shadow: 0 10px 20px rgba(255, 157, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .villa-title-header h1 {
+                font-size: 2rem;
+            }
+
+            .villa-description h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- Navigation -->
+        <header class="main-header sticky active">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="image/logo (1).png" alt="Sri Lankan Safest Driving Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-primary">SRI LANKAN</span>
+                        <span class="logo-secondary">SAFEST DRIVING</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">HOME</a></li>
+                    <li><a href="index.html#gallery">GALLERY</a></li>
+                    <li><a href="reviews.html">REVIEWS</a></li>
+                    <li class="dropdown">
+                        <a href="itineraries.html">SERVICES ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="itineraries.html">Long Day Tours</a></li>
+                            <li><a href="services-we-do.html">Services We Do</a></li>
+                            <li><a href="rentals.html">Rent Villa, Car & Bike</a></li>
+                            <li><a href="index.html#services">Hotels</a></li>
+                            <li><a href="airport-pickup.html">Airport Pickups</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="best_places.html" id="nav-places">BEST VISITING PLACES ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="best_places.html">Best Places to Visit</a></li>
+                            <li><a href="#">Places – 360' View</a></li>
+                        </ul>
+                    </li>
+                    <li id="nav-villa"><a href="villas.html">RENT VILLA</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#more" id="nav-more">MORE ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="registration.html">Registration</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </li>
+          <li class="lang-switcher">
+            <button class="lang-switcher-btn" aria-label="Switch Language">
+              <span class="lang-globe">&#127760;</span> LANGUAGE &#9660;
+            </button>
+            <div class="lang-dropdown"></div>
+          </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="villa-details-page">
+            <div class="villa-details-container">
+                <div class="villa-title-header">
+                    <h1>VILLA - 4 : Galle</h1>
+                    <p style="margin-top: 10px; font-size: 1.2rem; color: #cccccc;">Your Home Away from Home in
+                        Anagarika
+                        Dharmapala Mawatha</p>
+                    <div class="divider"></div>
+                </div>
+
+                <!-- Gallery Section -->
+                <section class="gallery-section">
+                    <div class="carousel-container">
+                        <div class="carousel-track-container">
+                            <div class="carousel-track" id="villa-carousel">
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="Villa 4 - Galle/imgi_2_.png" alt="Villa Exterior">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="Villa 4 - Galle/imgi_3_.png" alt="Living Area">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="Villa 4 - Galle/imgi_4_.png" alt="Bedroom View">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="Villa 4 - Galle/imgi_5_.png" alt="Kitchen View">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="Villa 4 - Galle/imgi_6_.webp" alt="Garden Area">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="Villa 4 - Galle/imgi_8_.png" alt="Villa View 6">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="Villa 4 - Galle/imgi_9_.png" alt="Villa View 7">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="Villa 4 - Galle/imgi_10_.png" alt="Villa View 8">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="Villa 4 - Galle/imgi_11_.png" alt="Villa View 9">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="Villa 4 - Galle/imgi_14_.png" alt="Villa View 10">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="Villa 4 - Galle/imgi_15_.png" alt="Villa View 11">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="Villa 4 - Galle/imgi_35_rs=w_1023,h_682.png" alt="Villa View 12">
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-image">
+                                        <img src="Villa 4 - Galle/imgi_38_rs=w_1023,h_682.png" alt="Villa View 13">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-controls">
+                            <button class="carousel-btn prev-btn" id="villa-prev">❮</button>
+                            <button class="carousel-btn next-btn" id="villa-next">❯</button>
+                        </div>
+                        <div class="carousel-dots" id="villa-dots"></div>
+                    </div>
+                </section>
+
+                <!-- Description Section -->
+                <section class="villa-description">
+                    <h2>Welcome to Your Home Away from Home in Anagarika Dharmapala Mawatha, Galle</h2>
+                    <p>Nestled in the peaceful enclave of Anagarika Dharmapala Mawatha (Brown's Road), just 1 kilometer
+                        away from Karapitiya Teaching Hospital and a short 3-kilometer drive from Galle Central Bus
+                        Stand, this charming house offers the perfect blend of convenience and comfort. Surrounded by a
+                        friendly residential neighborhood, it's an ideal choice for those seeking a cozy and
+                        well-appointed retreat in Galle.</p>
+
+                    <h3>Bedroom Details</h3>
+                    <ul class="amenities-list">
+                        <li>Three inviting bedrooms await you, ensuring a restful night's sleep for up to six guests.
+                        </li>
+                        <li>Two spacious King Size beds and two comfortable Double Beds offer ample sleeping options.
+                        </li>
+                        <li>Two of the bedrooms are equipped with air conditioning, perfect for keeping cool during warm
+                            Sri Lankan evenings.</li>
+                        <li>One bedroom features an attached bathroom for added privacy and convenience.</li>
+                    </ul>
+
+                    <h3>Bathrooms</h3>
+                    <p>Two well-maintained bathrooms are at your disposal, both equipped with hot water for a relaxing
+                        and refreshing shower experience.</p>
+
+                    <h3>Fully Equipped Kitchen & Household Items</h3>
+                    <ul class="amenities-list">
+                        <li>The kitchen is fully equipped with modern appliances, including a refrigerator and a washing
+                            machine.</li>
+                        <li>Two large wardrobes provide ample storage space for your belongings.</li>
+                        <li>A comfortable sofa with a coffee table in the living area is perfect for relaxing with
+                            family or friends.</li>
+                    </ul>
+
+                    <h3>Garage and Rooftop</h3>
+                    <ul class="amenities-list">
+                        <li>A garage is available for your convenience, providing secure parking for your vehicle.</li>
+                        <li>The rooftop is an inviting space where you can soak in the scenic views of the surrounding
+                            area, enjoy a cup of tea, or simply unwind under the clear skies.</li>
+                    </ul>
+
+                    <h3>WiFi</h3>
+                    <p>Stay connected with high-speed WiFi available (ADSL-SLT), ensuring you can keep in touch with
+                        loved ones or stay productive during your stay.</p>
+
+                    <p style="margin-top: 40px; font-weight: 500;">This Galle residence offers more than just a place to
+                        stay; it offers a glimpse into the welcoming lifestyle of the local community. Whether you're
+                        exploring the historic attractions of Galle Fort or simply enjoying the tranquility of the
+                        neighborhood, this house is your perfect home base. Book your stay now and experience the charm
+                        of Anagarika Dharmapala Mawatha in Galle.</p>
+
+                    <div class="cta-section">
+                        <h2>Book Your Dream Villa Getaway Today!</h2>
+                        <a href="https://wa.me/94779036148" class="btn-book" target="_blank">Contact Us on WhatsApp</a>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer id="contact" class="main-footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Sri-Lankan Safest Driving</h3>
+                    <p>No 47, Rathmehera Scheme, Aluthwala, 80332, Hikkaduwa, Sri Lanka</p>
+                    <p>Email: <a href="mailto:safestdriver.info@gmail.com">safestdriver.info@gmail.com</a></p>
+                    <p>WhatsApp: <a href="https://wa.me/94779036148">+94 779036148</a></p>
+                    <p>Mobile No. - +94779036148</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2026 Sri Lankan Safest Driving - All Rights Reserved.</p>
+                <p style="font-size: 0.75rem; margin-top: 10px;">Designed by ND LK SOLUTIONS (PVT) LTD</p>
+            </div>
+        </footer>
+
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/94779036148" class="whatsapp-float" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"
+                style="width: 35px; height: 35px;">
+        </a>
+    </div>
+
+    <script src="./main.js"></script>
+
+  <!-- Google Translate -->
+  <div id="google_translate_element" style="display:none"></div>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

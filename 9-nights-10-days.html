@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sri Lankan Safest Driving | 9 Nights &amp; 10 Days Tour</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        /* Specific Styles for Explore Page */
+        .explore-hero {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 100vh;
+            background-color: var(--secondary-color);
+        }
+
+        .explore-image {
+            flex: 1 1 50%;
+            min-height: 50vh;
+            position: relative;
+        }
+
+        .explore-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .explore-info {
+            flex: 1 1 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 5%;
+            text-align: center;
+            background-color: #1a1a1a;
+            color: white;
+        }
+
+        .explore-category {
+            font-size: 1rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: #ccc;
+        }
+
+        .explore-duration {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            font-weight: 800;
+            margin-bottom: 30px;
+            line-height: 1.1;
+        }
+
+        .explore-route {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 80%;
+            margin-bottom: 50px;
+            color: #e0e0e0;
+        }
+
+        .explore-content-section {
+            padding: 80px 10%;
+            background-color: #ffffff;
+            color: #333;
+            overflow: hidden;
+        }
+
+        .explore-content-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .explore-content-container h4 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 15px;
+        }
+
+        .explore-content-container p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #555;
+            text-align: center;
+        }
+
+        /* Two column timeline layout */
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .timeline-grid.single-col {
+            grid-template-columns: 1fr;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .timeline-grid.single-col .timeline-item-image {
+            height: 500px;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+
+            .timeline-grid,
+            .timeline-grid.single-col {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-grid.single-col .timeline-item-image {
+                height: 300px;
+            }
+        }
+
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .timeline-item-image,
+        .carousel-image {
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            transition: transform 0.5s ease;
+        }
+
+        .timeline-item-image img,
+        .carousel-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+
+        .timeline-item-image:hover img,
+        .carousel-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .timeline-item-content {
+            text-align: center;
+        }
+
+        .timeline-item-content p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .timeline-item-content strong {
+            color: #333;
+            font-weight: 700;
+        }
+
+        /* Full width day divider */
+        .day-divider {
+            text-align: left;
+            margin: 60px 0 40px;
+            padding-bottom: 20px;
+        }
+
+        .day-divider h3 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: #222;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .day-divider p {
+            text-align: left !important;
+            font-style: italic;
+            color: #666;
+            font-size: 1rem;
+        }
+
+        /* Image Carousel Setup */
+        .carousel-wrapper {
+            position: relative;
+            max-width: 1200px;
+            margin: 40px auto;
+            overflow: hidden;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            width: 100%;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 0 5px;
+        }
+
+        .carousel-item.single-item {
+            grid-template-columns: 1fr;
+        }
+
+        .carousel-image {
+            height: 450px;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 8px;
+        }
+
+        .carousel-image.single-image {
+            height: 500px;
+        }
+
+        @media (max-width: 992px) {
+
+            .timeline-item-image,
+            .carousel-image {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .timeline-item-image,
+            .carousel-image,
+            .carousel-image.single-image {
+                height: 450px;
+                /* Taller on mobile for portrait shots (elephants, rocks) */
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .timeline-item-image,
+            .carousel-image,
+            .carousel-image.single-image {
+                height: 400px;
+            }
+        }
+
+        .explore-content-section {
+            padding: 80px 10%;
+            background-color: #ffffff;
+            color: #333;
+            overflow: hidden;
+        }
+
+        /* Trip Map Styles */
+        @media (max-width: 992px) {
+            .explore-hero {
+                flex-direction: column;
+            }
+
+            .explore-image,
+            .explore-info {
+                flex: 1 1 100%;
+            }
+
+            .explore-image {
+                min-height: 400px;
+                order: -1;
+            }
+
+            .explore-duration {
+                font-size: 3rem;
+            }
+
+            .explore-content-section {
+                padding: 60px 5%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .explore-content-section {
+                padding: 40px 15px;
+            }
+        }
+
+        /* Sticky Nav padding */
+        body {
+            padding-top: 80px;
+        }
+
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .carousel-dot {
+            width: 30px;
+            height: 2px;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .carousel-dot.active {
+            background-color: #333;
+        }
+
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+            pointer-events: none;
+            padding: 0 10px;
+        }
+
+        .carousel-btn {
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            pointer-events: all;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+            z-index: 10;
+        }
+
+        .carousel-btn:hover {
+            background: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- Navigation -->
+        <header class="main-header sticky active">
+            <nav class="navbar">
+                <a href="index.html" class="logo">
+                    <img src="image/logo (1).png" alt="Sri Lankan Safest Driving Logo" class="logo-img">
+                    <div class="logo-text">
+                        <span class="logo-primary">SRI LANKAN</span>
+                        <span class="logo-secondary">SAFEST DRIVING</span>
+                    </div>
+                </a>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-links">
+                    <li><a href="index.html#home">HOME</a></li>
+                    <li><a href="index.html#gallery">GALLERY</a></li>
+                    <li><a href="reviews.html">REVIEWS</a></li>
+                    <li class="dropdown">
+                        <a href="itineraries.html">SERVICES ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="itineraries.html">Long Day Tours</a></li>
+                            <li><a href="services-we-do.html">Services We Do</a></li>
+                            <li><a href="rentals.html">Rent Villa, Car & Bike</a></li>
+                            <li><a href="index.html#services">Hotels</a></li>
+                            <li><a href="airport-pickup.html">Airport Pickups</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="best_places.html" id="nav-places">BEST VISITING PLACES ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="best_places.html">Best Places to Visit</a></li>
+                            <li><a href="#">Places – 360' View</a></li>
+                        </ul>
+                    </li>
+                    <li id="nav-villa"><a href="villas.html">RENT VILLA</a></li>
+                    <li class="dropdown">
+                        <a href="index.html#more" id="nav-more">MORE ▾</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="faq.html">FAQ</a></li>
+                            <li><a href="registration.html">Registration</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li><a href="contact.html">Contact Us</a></li>
+                        </ul>
+                    </li>
+          <li class="lang-switcher">
+            <button class="lang-switcher-btn" aria-label="Switch Language">
+              <span class="lang-globe">&#127760;</span> LANGUAGE &#9660;
+            </button>
+            <div class="lang-dropdown"></div>
+          </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section class="explore-hero">
+                <div class="explore-image">
+                    <img src="image/imgi_29_rs=w_1920,m.webp" alt="Sri Lanka Tour">
+                </div>
+                <div class="explore-info">
+                    <div class="explore-category">GOLDEN TRIANGLE TOUR</div>
+                    <h1 class="explore-duration">9 Nights / 10 Days</h1>
+                    <p class="explore-route">Negombo → Anuradhapura → Trincomalee → Habarana → Dambulla → Polonnaruwa →
+                        Sigiriya →
+                        Kandy → Colombo → Airport</p>
+                    <a href="#details" class="btn-yellow">EXPLORE</a>
+                </div>
+            </section>
+
+            <!-- Content Section -->
+            <section id="details" class="explore-content-section">
+                <div class="explore-content-container">
+
+                    <!-- Tour Overview -->
+                    <div class="tour-overview" style="margin-bottom: 50px;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 15px;">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#666" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            <h2
+                                style="font-family: var(--font-heading); font-size: 1.5rem; color: #333; margin: 0; text-transform: uppercase;">
+                                9 NIGHTS <span style="font-weight: 400; color: #666;">/ 10 DAYS</span>
+                            </h2>
+                        </div>
+                        <p style="font-size: 1.1rem; color: #666; margin: 0; text-align: left;">
+                            Negombo &ndash; Anuradhapura &ndash; Trincomalee &ndash; Habarana &ndash; Dambulla &ndash;
+                            Polonnaruwa
+                            &ndash; Sigiriya &ndash; Kandy &ndash; Colombo &ndash; Airport
+                        </p>
+                    </div>
+
+                    <!-- Day 01 -->
+                    <div class="day-divider">
+                        <h3>Day 01 &ndash; Airport &ndash; Negombo</h3>
+                        <p>Welcome to Sri Lanka! Upon arrival, we transfer to the nearby coastal town of Negombo. Relax
+                            after your flight, explore the golden beaches, or take a walk through the bustling fish
+                            market.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Negombo Beach</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="negombo-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/DSC8194.jpg" alt="Negombo Beach View 1">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_4_rs=w_600,cg_true,m.webp" alt="Negombo Beach View 2">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_5_rs=w_600,cg_true,m copy.webp"
+                                                alt="Negombo Beach View 3">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/negombo-beach_orig.jpg" alt="Negombo Beach View 4">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="negombo-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="negombo-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="negombo-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p><strong>Negombo</strong> is a major city in Sri Lanka, situated on the west coast and
+                                    at the mouth of the Negombo Lagoon. It is known for its long sandy beaches and
+                                    centuries-old fishing industry.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 02 -->
+                    <div class="day-divider">
+                        <h3>Day 02 &ndash; Anuradhapura</h3>
+                        <p>After breakfast, we head to the ancient capital of Anuradhapura, the first kingdom of Sri
+                            Lanka, filled with historical and religious significance.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Sacred City Exploration</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="anuradhapura-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_6_rs=w_814,h_407,cg_true.webp"
+                                                alt="Ruwanwelisaya Stupa">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/anuradhapura-sunset.jpg" alt="Anuradhapura Ruins 1">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/Anuradhapura-900-x-1125.webp" alt="Anuradhapura Ruins 2">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="anuradhapura-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="anuradhapura-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="anuradhapura-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p><strong>Anuradhapura</strong> is the first capital of Sri Lanka located in north
+                                    central province of Sri Lanka. It is one of the ancient capitals of Sri Lanka which
+                                    was the center of Theravada Buddhism for many centuries. Due to its ruins of an
+                                    ancient Sri Lankan civilization UNESCO named it as a UNESCO world heritage site in
+                                    1982 under the name of Sacred City of Anuradhapura.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 03 -->
+                    <div class="day-divider">
+                        <h3>Day 03 &ndash; Trincomalee</h3>
+                        <p>After breakfast, you will proceed to Trincomalee.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Trincomalee Highlights</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="trinco-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_7_rs=w_814,h_407,cg_true.webp" alt="Nilaveli Beach">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/Lovers-leap-trincomalee-1024x768.jpg.webp"
+                                                alt="Pigeon Island">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/dutch-bay-beach.jpg" alt="Koneswaram Temple">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="trinco-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="trinco-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="trinco-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p>After breakfast, you will proceed to Trincomalee.</p>
+                                <p><strong>Trincomalee (Trinco)</strong> sits on one of the world’s finest natural
+                                    harbors. This historic city is old almost beyond reckoning: it’s possibly the site
+                                    of historic Gokana in the Mahavamsa (Great Chronicle), and its Shiva temple the site
+                                    of Trikuta Hill in the Hindu text Vayu Purana. It makes a great stop over on the way
+                                    to the nearby beaches of Uppuveli and Nilaveli.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 04 -->
+                    <div class="day-divider">
+                        <h3>Day 04 &ndash; Habarana &ndash; Dambulla</h3>
+                        <p>The next day after breakfast, while driving to Habarana, Dambulla Cave Temple can be
+                            shown.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Dambulla Cave Temple</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="dambulla-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_12_qt=q_32.webp" alt="Dambulla Cave Temple View 1">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_9_rs=w_600,cg_true,m copy.webp"
+                                                alt="Dambulla Cave Temple View 2">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_8_rs=w_600,cg_true,m copy.webp"
+                                                alt="Dambulla Cave Temple View 3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="dambulla-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="dambulla-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="dambulla-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+
+                                <p><strong>Dambulla Cave Temple</strong> also known as the Golden Temple of Dambulla is
+                                    a World Heritage Site (1991) in Sri Lanka, situated in the central part of the
+                                    country. This site is situated 148 kilometres (92 mi) east of Colombo, 72 kilometres
+                                    (45 mi) north of Kandy and 43 km (27 mi) north of Matale.</p>
+                                <p>Dambulla is the largest and best-preserved cave temple complex in Sri Lanka. The rock
+                                    towers 160 m over the surrounding plains. There are more than 80 documented caves in
+                                    the surrounding area. Major attractions are spread over five caves, which contain
+                                    statues and paintings. These paintings and statues are related to Gautama Buddha and
+                                    his life. There are a total of 153 Buddha statues, three statues of Sri Lankan kings
+                                    and four statues of gods and goddesses. The latter include Vishnu and the Ganesha.
+                                    The murals cover an area of 2,100 square metres (23,000 sq ft). Depictions on the
+                                    walls of the caves include the temptation by the demon Mara, and Buddha's first
+                                    sermon.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Habarana</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="habarana-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_8_rs=w_600,cg_true,m copy 3.webp"
+                                                alt="Habarana Elephant Safari 1">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_14_rs=w_600,cg_true,m.webp"
+                                                alt="Habarana Elephant Safari 2">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_15_rs=w_600,cg_true,m copy 2.webp"
+                                                alt="Habarana Elephant Safari 3">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_11_rs=w_600,cg_true,m copy.webp"
+                                                alt="Habarana Elephant Safari 4">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_9_rs=w_600,cg_true,m copy 2.webp"
+                                                alt="Habarana Elephant Safari 5">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_12_rs=w_600,cg_true,m copy.webp"
+                                                alt="Habarana Elephant Safari 6">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="habarana-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="habarana-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="habarana-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p><strong>Habarana</strong> is a small city in the Anuradhapura District of Sri Lanka.
+                                    The location has some mid-range and up hotels aimed at package tourists, and is a
+                                    departure point for other nearby locations of greater interest.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 05 -->
+                    <div class="day-divider">
+                        <h3>Day 05 &ndash; Habarana &ndash; Polonnaruwa</h3>
+                        <p>The next day after breakfast, while driving to Habarana, Dambulla Cave Temple can be shown.
+                        </p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Polonnaruwa</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="polonnaruwa-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_31_rs=w_600,cg_true,m.webp" alt="Polonnaruwa Ruins 1">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_30_rs=w_600,cg_true,m.webp" alt="Polonnaruwa Ruins 2">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_29_rs=w_600,cg_true,m.webp" alt="Polonnaruwa Ruins 3">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_33_rs=w_600,cg_true,m.webp" alt="Polonnaruwa Ruins 4">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_31_rs=w_600,cg_true,m (1).webp"
+                                                alt="Polonnaruwa Ruins 5">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="polonnaruwa-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="polonnaruwa-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="polonnaruwa-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p><strong>Polonnaruwa Kingdom</strong> or the Ancient city of Polonnaruwa was the
+                                    second capital of Sri Lanka for three centuries between the 11th to 13th century
+                                    after the destruction of Anuradhapura Kingdom in 993. It is located in north central
+                                    province of Sri Lanka. Due to its archeological prominence and the ancient
+                                    technological superiority UNESCO declared Polonnaruwa as a World Heritage in 1982
+                                    under the name of Ancient City of Polonnaruwa.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="day-divider">
+                        <h3>Day 06 &ndash; Sigiriya &ndash; Kandy</h3>
+                        <p>The next day after breakfast, You will visit Sigiriya and climb the Rock Fortress. After
+                            that, you will proceed to Kandy.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Sigiriya Rock</h4>
+                            <div class="timeline-item-image">
+                                <img src="image/sigiria-sri-lanka.jpg" alt="Sigiriya Rock Fortress">
+                            </div>
+                            <div class="timeline-item-content">
+                                <p><strong>Sigiriya or Sinhagiri</strong> is an ancient rock fortress located in the
+                                    northern Matale District near the town of Dambulla in the Central Province, Sri
+                                    Lanka. It is a site of historical and archaeological significance that is dominated
+                                    by a massive column of rock approximately 180 m (590 ft) high. According to the
+                                    ancient Sri Lankan chronicle the Cūḷavaṃsa, this area was a large forest, then after
+                                    storms and landslides, it became a hill and was selected by King Kashyapa (AD
+                                    477–495) for his new capital. He built his palace on top of this rock and decorated
+                                    its sides with colorful frescoes. On a small plateau about halfway up the side of
+                                    this rock, he built a gateway in the form of an enormous lion. The capital and the
+                                    royal palace were abandoned after the king's death. It was used as a Buddhist
+                                    monastery until the 14th century. Sigiriya today is a UNESCO-listed World Heritage
+                                    Site. It is one of the best-preserved examples of ancient urban planning.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Temple of the Tooth</h4>
+                            <div class="timeline-item-image">
+                                <img src="image/temple-sacred-tooth-relic-kandy-sri-lanka.jpg"
+                                    alt="Temple of the Tooth">
+                            </div>
+                            <div class="timeline-item-content">
+                                <p><strong>Kandy</strong> is a major city in Sri Lanka located in the Central Province.
+                                    It was the last capital of the ancient kings' era of Sri Lanka. The city lies in the
+                                    midst of hills in the Kandy plateau, which crosses an area of tropical plantations,
+                                    mainly tea. Kandy is both an administrative and religious city and is also the
+                                    capital of the Central Province. Kandy is the home of the <strong>Temple of the
+                                        Tooth Relic</strong> (Sri Dalada Maligawa), one of the most sacred places of
+                                    worship in the Buddhist world. It was declared a world heritage site by UNESCO in
+                                    1988. Historically the local Buddhist rulers resisted Portuguese, Dutch, and British
+                                    colonial expansion and occupation.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 07 -->
+                    <div class="day-divider">
+                        <h3>Day 07 &ndash; Peradeniya</h3>
+                        <p>The next day after breakfast, you will proceed to Peradeniya Botnical Garden.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Peradeniya Botanical Garden</h4>
+                            <div class="tour-carousel-wrapper">
+                                <div class="tour-carousel-track-container">
+                                    <div class="tour-carousel-track" id="peradeniya-carousel">
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_27_rs=w_1920,m.webp" alt="Botanical Garden 1">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_30_rs=w_1920,m.webp" alt="Botanical Garden 2">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_18_rs=w_600,cg_true,m copy 2.webp"
+                                                alt="Botanical Garden 3">
+                                        </div>
+                                        <div class="tour-carousel-item">
+                                            <img src="image/imgi_16_rs=w_600,cg_true,m copy.webp"
+                                                alt="Botanical Garden 4">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-controls">
+                                    <button class="carousel-btn prev-btn" id="peradeniya-prev">❮</button>
+                                    <button class="carousel-btn next-btn" id="peradeniya-next">❯</button>
+                                </div>
+                                <div class="carousel-dots" id="peradeniya-dots"></div>
+                            </div>
+                            <div class="timeline-item-content">
+                                <p><strong>Peradeniya Botanical Garden</strong>, the most significant among the
+                                    three main botanical gardens in Sri Lanka, lies in a spiral of the Mahaweli River
+                                    and is 6 km west of Kandy. The history of this spectacular botanical garden dates
+                                    back to the 14th century when Royalty ruled the central highlands of Sri Lanka, and
+                                    It was the Royal Gardens from 1780 – 1798. At that time, it was used by Kandyan
+                                    queens for their pleasure. In 1815 British took Kandy under their control, the
+                                    garden as the Allied Forces Headquarters for the Asian region for a short spell
+                                    during the Second World War. Then the garden was established in 1821, primarily to
+                                    introduce coffee trees and various other tropical plants for economic and
+                                    environmental development. Even after, in 1840, it was transformed into a botanical
+                                    garden Under the directorship of George Henry Kendrick Thwaites, an eminent British
+                                    botanist.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 08 -->
+                    <div class="day-divider">
+                        <h3>Day 08 &ndash; Pinnawala &ndash; Colombo</h3>
+                        <p>The next day after breakfast, while driving to Colombo, Pinnawala Elephant Orphanage can be
+                            shown.</p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Pinnawala Elephant Orphanage</h4>
+                            <div class="timeline-item-image">
+                                <img src="image/imgi_6_rs=w_600,cg_true,m.webp" alt="Pinnawala Elephant Orphanage">
+                            </div>
+                            <div class="timeline-item-content">
+                                <p><strong>Pinnawala Elephant Orphanage</strong> is an orphanage, nursery, and captive
+                                    breeding ground for wild Asian elephants located at Pinnawala village, 13 km (8.1
+                                    mi) northeast of Kegalle town in Sabaragamuwa Province of Sri Lanka. Pinnawala has
+                                    the largest herd of captive elephants in the world. In 2011, there were 96
+                                    elephants, including 43 males and 68 females from 3 generations, living in
+                                    Pinnawala.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <h4>Colombo City</h4>
+                            <div class="timeline-item-image">
+                                <img src="image/LK950H0000-01-E_6184e3ee-35ea-4f21-87ba-e6e8b1ffef25.webp"
+                                    alt="Colombo City">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 09 -->
+                    <div class="day-divider">
+                        <h3>Day 09 &ndash; Colombo</h3>
+                        <p>The next day after breakfast, proceed to Colombo. </p>
+                    </div>
+                    <div class="timeline-grid single-col">
+                        <div class="timeline-item">
+                            <h4>Colombo</h4>
+                            <div class="timeline-item-content">
+                                <p><strong>Colombo</strong> is the executive and judicial capital and largest city of
+                                    Sri Lanka by population. According to the Brookings Institution, Colombo
+                                    metropolitan area has a population of 5.6 million, and 752,993 in the Municipality.
+                                    It is the financial centre of the island and a tourist destination.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Day 10 -->
+                    <div class="day-divider">
+                        <h3>Day 10 &ndash; Colombo &ndash; Airport</h3>
+                        <p> Hoping you have enjoyed your trip, you will then be taken to the airport for your upcoming
+                            flight. </p>
+                    </div>
+
+                    <!-- Trip Map Section -->
+                    <div class="trip-map-section">
+                        <div class="trip-map-wrapper">
+                            <img src="image/imgi_44_cr=t_5.29%25,l_0.99%25,w_94.34%25,h_94%25.webp" alt="Map of the whole trip">
+                        </div>
+                        <p class="trip-map-caption">Map of the whole trip</p>
+                    </div>
+
+                    <!-- Booking Button -->
+                    <div style="text-align: center; margin-top: 60px;">
+                        <a href="index.html#contact" class="btn-yellow"
+                            style="padding: 15px 40px; font-size: 1.1rem; letter-spacing: 2px;">BOOK THIS TOUR</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer id="contact" class="main-footer">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Sri-Lankan Safest Driving</h3>
+                    <p>No 47, Rathmehera Scheme, Aluthwala, 80332, Hikkaduwa, Sri Lanka</p>
+                    <p>Email: <a href="mailto:safestdriver.info@gmail.com">safestdriver.info@gmail.com</a></p>
+                    <p>WhatsApp: <a href="https://wa.me/94779036148">+94 779036148</a></p>
+                    <p>Mobile No. - +94779036148</p>
+                </div>
+                <div class="social-links">
+                    <a href="#" class="social-icon">Facebook</a>
+                    <a href="#" class="social-icon">Instagram</a>
+                    <a href="#" class="social-icon">YouTube</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>Copyright © 2026 Sri Lankan Safest Driving - All Rights Reserved.</p>
+                <p style="font-size: 0.75rem; margin-top: 10px;">Designed by ND LK SOLUTIONS (PVT) LTD</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/94779036148" class="whatsapp-float" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp"
+            style="width: 35px; height: 35px;">
+    </a>
+
+    <script src="./main.js"></script>
+
+  <!-- Google Translate -->
+  <div id="google_translate_element" style="display:none"></div>
+  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
